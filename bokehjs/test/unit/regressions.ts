@@ -893,9 +893,11 @@ describe("Bug", () => {
           attributes: {
             tags: [],
             name: null,
-            js_property_callbacks: {type: "map"},
-            js_event_callbacks: {type: "map"},
-            subscribed_events: {type: "set"},
+            _js_property_callbacks: {type: "map"},
+            _js_property_callback_policies: {type: "map"},
+            _js_event_callbacks: {type: "map"},
+            _subscribed_changes: {type: "map"},
+            _subscribed_events: {type: "set"},
             syncable: true,
             reconnect_session: true,
             notify_connection_status: true,
@@ -906,9 +908,11 @@ describe("Bug", () => {
               attributes: {
                 tags: [],
                 name: null,
-                js_property_callbacks: {type: "map"},
-                js_event_callbacks: {type: "map"},
-                subscribed_events: {type: "set"},
+                _js_property_callbacks: {type: "map"},
+                _js_property_callback_policies: {type: "map"},
+                _js_event_callbacks: {type: "map"},
+                _subscribed_changes: {type: "map"},
+                _subscribed_events: {type: "set"},
                 syncable: true,
                 html_attributes: {type: "map"},
                 html_id: null,
@@ -930,9 +934,11 @@ describe("Bug", () => {
           attributes: {
             tags: [],
             name: null,
-            js_property_callbacks: {type: "map"},
-            js_event_callbacks: {type: "map"},
-            subscribed_events: {type: "set"},
+            _js_property_callbacks: {type: "map"},
+            _js_property_callback_policies: {type: "map"},
+            _js_event_callbacks: {type: "map"},
+            _subscribed_changes: {type: "map"},
+            _subscribed_events: {type: "set"},
             syncable: true,
           },
         }],
@@ -2273,7 +2279,7 @@ ${view.host_selector} {
           y_range.end = Math.max(...vis_y1, ...vis_y2) + 1
         }
       `})
-      x_range.js_property_callbacks = {"change:end": [autoscale]}
+      x_range._js_property_callbacks = {"change:end": [autoscale]}
 
       const {view} = await display(p)
       await actions(view).scroll_up(xy(50, 0), 2)
